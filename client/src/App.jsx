@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
@@ -10,8 +10,9 @@ import SalesReports from './pages/SalesReports';
 import POSBilling from './pages/POSBilling';
 import Settings from './pages/Settings';
 import Login from './pages/Login';
+import AdminPanel from './pages/AdminPanel'; // Import AdminPanel
 import PrivateRoute from './components/PrivateRoute';
-import  AuthProvider  from './context/AuthContext';
+import { AuthProvider } from './context/AuthContext';
 
 const App = () => {
     return (
@@ -22,14 +23,15 @@ const App = () => {
                     <Sidebar />
                     <div className="flex-grow p-4">
                         <Routes>
-                            <Route path="/login" component={<Login/>} />
-                            <PrivateRoute path="/" exact component={Dashboard} />
-                            <PrivateRoute path="/employees" component={Employees} />
-                            <PrivateRoute path="/attendance" component={Attendance} />
-                            <PrivateRoute path="/inventory" component={Inventory} />
-                            <PrivateRoute path="/salesreports" component={SalesReports} />
-                            <PrivateRoute path="/posbilling" component={POSBilling} />
-                            <PrivateRoute path="/settings" component={Settings} />
+                            <Route path="/login" element={<Login />} />
+                            <PrivateRoute path="/" exact element={<Dashboard />} />
+                            <PrivateRoute path="/employees" element={<Employees />} />
+                            <PrivateRoute path="/attendance" element={<Attendance />} />
+                            <PrivateRoute path="/inventory" element={<Inventory />} />
+                            <PrivateRoute path="/salesreports" element={<SalesReports />} />
+                            <PrivateRoute path="/posbilling" element={<POSBilling />} />
+                            <PrivateRoute path="/settings" element={<Settings />} />
+                            <PrivateRoute path="/admin" element={<AdminPanel />} /> {/* Add Admin Panel route */}
                         </Routes>
                     </div>
                 </div>
@@ -39,5 +41,3 @@ const App = () => {
 };
 
 export default App;
-
-
