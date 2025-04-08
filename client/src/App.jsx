@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Routes,Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
@@ -22,7 +22,7 @@ const App = () => {
                     <Sidebar />
                     <div className="flex-grow p-4">
                         <Routes>
-                            <Route path="/login" component={Login} />
+                            <Route path="/login" component={<Login/>} />
                             <PrivateRoute path="/" exact component={Dashboard} />
                             <PrivateRoute path="/employees" component={Employees} />
                             <PrivateRoute path="/attendance" component={Attendance} />
