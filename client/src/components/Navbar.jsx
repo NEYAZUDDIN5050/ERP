@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -31,7 +33,7 @@ const Navbar = () => {
           <Link to="/inventory" className="block text-white px-4 py-2 md:inline">Inventory</Link>
           <Link to="/salesreports" className="block text-white px-4 py-2 md:inline">Sales Reports</Link>
           <Link to="/posbilling" className="block text-white px-4 py-2 md:inline">POS Billing</Link>
-          <Link to="/settings" className="block text-white px-4 py-2 md:inline"><i class="fa fa-cog" aria-hidden="true"></i></Link>
+          <Link to="/settings" className="block text-white px-4 py-2 md:inline"><i  aria-hidden="true"></i></Link>
           <Link to="/login" className="block text-white px-4 py-2 md:inline flex items-center gap-2">
           <FontAwesomeIcon icon={faUser} className="text-white"  /> 
           </Link>
